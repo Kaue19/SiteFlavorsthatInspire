@@ -39,5 +39,34 @@
     <div class="rodape">
         <p class="Prodape">Copyright © 2024 All rights reserved - Flavors that Inspire</p>
     </div>
+    <script>
+        // Get the carousel container and its slides
+        const carousel = document.querySelector('.caixapropaganda');
+        const slides = carousel.querySelectorAll('div');
+    
+        // Set the initial active slide
+        slides[0].classList.add('active');
+    
+        // Function to show the next slide
+        function showNextSlide() {
+          const currentSlide = carousel.querySelector('.active');
+          const nextSlide = currentSlide.nextElementSibling || slides[0];
+    
+          currentSlide.classList.remove('active');
+          nextSlide.classList.add('active');
+        }
+    
+        // Function to show the previous slide
+        function showPreviousSlide() {
+          const currentSlide = carousel.querySelector('.active');
+          const previousSlide = currentSlide.previousElementSibling || slides[slides.length - 1];
+    
+          currentSlide.classList.remove('active');
+          previousSlide.classList.add('active');
+        }
+    
+        // Example: Show the next slide every 3 seconds
+        setInterval(showNextSlide, 5000);
+      </script>
 </body>
 </html>
